@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Javascript</title>
+    <style>
+        .merah{
+            background: red;
+        }
+
+        .black{
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body onload="">
+    <h1> Belajar DOM Javascript </h1>
+    <img onclick = "berubah()" src="belajardom.jpg" width=300 id="gambar" class="black">
+    <input type="text" value="nama" id="input">
+    <input type="submit" id="submit">
+    Namanya adalah <span id="p1"></span>
+    <div id="box1">
+        <div id="p1">Paragraf 1</div>
+    </div>
+
+    <div class="boxes"></div>
+    <div class="boxes"></div>
+    <div class="boxes"></div>
+
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Javascript</li>
+        <div></div>
+    </ul>
+
+    <script>
+        //cara memilih teks berdasarkan nomer indexnya
+        //selector
+        document.getElementById('box1').innerHTML ="Sekolah Koding";
+        
+        //tips pengulangan
+        /*var boxes = document.getElementsByClassName('boxes');
+        boxes[0].innerHTML = "versi terbaru";
+        boxes[1].innerHTML = "versi sebelumnya";
+        boxes[2].innerHTML = "versi terlama";
+
+        var list = document.getElementsByClassName('l1');
+        list[0].innerHTML = "PHP";
+        list[1].innerHTML = "SASS";
+        list[2].innerHTML = "JQuery";
+        
+        document.querySelectorAll('#box1')[0].innerHTML = "Koding 123";
+        document.querySelectorAll('.boxes')[0].innerHTML = "Koding 123";
+        document.querySelectorAll('ul div')[0].innerHTML = "Koding 123";*/
+
+        //---Edit HTML---
+        //menambahkan elemen
+        var el = document.createElement('h2');
+        var text = document.createTextNode('Belajar Progamming Online');
+        var box = document.getElementById('box1');
+
+        el.appendChild(text);
+        box.appendChild(el);
+
+        //menghapus
+        //box.removeChild(el)
+
+        //mengedit
+        var el2 = document.createElement('h2');
+        var text2 = document.createTextNode('Belajar Sekarang!');
+        el2.appendChild(text2);
+        var p1 = document.getElementById('p1');
+        
+        box.replaceChild(el2,p1);
+        */
+
+        //---bermain atribut---
+        /*var img = document.getElementById('gambar');
+        img.width = 400;
+
+        //img.setAttribute('class', 'merah');
+        img.className += ' merah'
+
+        var input = document.getElementById('input');
+        input.value = "nama lengkap";
+
+        input.style.border = '3px solid blue';
+        input.style.backgroundColor = 'yellow';
+
+        //--- event ---
+        function berubah(){
+            img.style.backgroundColor = 'yellow';
+        }
+
+        input.onclick = berubah; 
+    
+        function berubah2(){
+            input.style.backgroundColor = 'blue';
+        }
+
+        input.addEventListener('mouseenter', berubah2);
+
+        input.addEventListener('mouseleave', function(){
+            input.style.backgroundColor = 'red';
+        });
+
+        var submit = document.getElementById('submit');
+        var span   = document.getElementById('p1');
+
+        submit.onclick = function(){
+            var text = input.value;
+            span.innerHTML= text;
+        }
+
+    </script>
+
+</body>
+</html>
